@@ -15,3 +15,4 @@ export type Contract = {
   };
   itemContract: { terminationPenalty: number; notification: number, cityForum: string };
 };
+
