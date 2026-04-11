@@ -43,10 +43,12 @@ export default function App() {
       setContract(newState);    
     }
 
+    console.log(contract);
+
     return (
-       <div>
+      <div>
         <ContractForm contract={contract} onChange={handleChange} />
         <ContractPreview contract={contract} />
       </div>
-    )
+    );
   }
