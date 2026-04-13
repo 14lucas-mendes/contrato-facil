@@ -1,7 +1,6 @@
 import type { Contract } from "./types/contract";
 import { useState } from "react";
 import ContractForm from "./components/form/ContractForm";
-import ContractPreview from "./components/preview/ContractPreview";
 
 export default function App() {
    const [contract, setContract] = useState<Contract>({
@@ -48,7 +47,6 @@ export default function App() {
     return (
       <div>
         <ContractForm contract={contract} onChange={handleChange} />
-        <ContractPreview contract={contract} />
       </div>
     );
   }
