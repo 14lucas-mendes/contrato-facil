@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  background: #f9fafb;
+  color: #111827;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.input {
+  width: 100%;
+  height: 25px;
+}
+
+.app-shell {
+  min-height: 100vh;
+  width: 100%;
+  padding: 24px;
+  background: #f3f4f6;
+}
+
+.layout-two-columns {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.left-panel,
+.right-panel {
+  flex: 1 1 calc(50% - 12px);
+  min-width: 320px;
+}
+
+.panel {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 15px 40px rgba(15, 23, 42, 0.08);
+}
+
+.contract-form {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.form-section {
+  max-width: 560px;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+}
+
+.form-section__title {
+  margin-bottom: 1.25rem;
+  color: #0f172a;
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.form-section__grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.form-section__grid.payment-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+.form-section__grid .input-group {
+  display: block;
+}
+
+.form-section__grid .input-group.span-two {
+  grid-column: span 2;
+}
+
+.form-section__grid .input-group label {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: #334155;
+  font-weight: 600;
+}
+
+.form-section__grid .input-group input,
+.form-section__grid select,
+.payment-select {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid rgba(148, 163, 184, 0.32);
+  background: rgba(255, 255, 255, 0.72);
+  padding: 0.75rem 1rem;
+  color: #0f172a;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.payment-select {
+  min-height: 2.25rem;
+}
+
+.form-section__grid .input-group input:hover,
+.form-section__grid select:hover,
+.payment-select:hover {
+  border-color: rgba(37, 99, 235, 0.45);
+}
+
+.form-section__grid .input-group input:focus,
+.form-section__grid select:focus,
+.payment-select:focus {
+  outline: none;
+  border-color: rgba(37, 99, 235, 0.75);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.14);
+  background: rgba(255, 255, 255, 0.95);
+}

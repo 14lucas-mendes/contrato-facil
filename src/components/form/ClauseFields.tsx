@@ -1,39 +1,41 @@
-import type {Contract} from "../../types/contract";
+import type { Contract } from "../../types/contract";
 
+import Input from "../../components/ui/Input";
 
-type ClauseFieldsProps = {
-    data: Contract['itemContract'];
-    updateData: (key: keyof Contract['itemContract'], data: Contract['itemContract'][keyof Contract['itemContract']]) => void;
+interface ClauseFieldsProps {
+  data: Contract["itemContract"];
+  updateData: (
+    key: keyof Contract["itemContract"],
+    data: Contract["itemContract"][keyof Contract["itemContract"]],
+  ) => void;
 }
 
-
 export default function ClauseFields({ data, updateData }: ClauseFieldsProps) {
-    return (
-        <div>
-            <label>
-                Cláusula de rescisão:
-                <input
-                    type="number"
-                    value={data.terminationPenalty}
-                    onChange={(e) => updateData('terminationPenalty', Number(e.target.value))}
-                />
-            </label>
-            <label>
-                Cláusula de notificação:
-                <input
-                    type="number"
-                    value={data.notification}
-                    onChange={(e) => updateData('notification', Number(e.target.value))}
-                />
-            </label>
-            <label>
-                Foro da cidade:
-                <input
-                    type="text"
-                    value={data.cityForum}
-                    onChange={(e) => updateData('cityForum', e.target.value)}
-                />
-            </label>
-        </div> 
-    )
+  return (
+    <div className="form-section">
+      <h2 className="form-section__title">Cláusulas</h2>
+      <div className="form-section__grid">
+        <Input
+          label="Cláusula de rescisão"
+          type="number"
+          value={data.terminationPenalty}
+          onChange={(e) =>
+            updateData("terminationPenalty", Number(e.target.value))
+          }
+        />
+        <Input
+          label="Cláusula de notificação"
+          type="number"
+          value={data.notification}
+          onChange={(e) => updateData("notification", Number(e.target.value))}
+        />
+        <Input
+          label="Foro da cidade"
+          type="text"
+          value={data.cityForum}
+          onChange={(e) => updateData("cityForum", e.target.value)}
+        />
+      </div>
+    </div>
+  );
 }

@@ -3,7 +3,7 @@ import { useState } from "react";
 import ContractForm from "./components/form/ContractForm";
 
 export default function App() {
-   const [contract, setContract] = useState<Contract>({
+  const [contract, setContract] = useState<Contract>({
     contractor: {
       name: "",
       cpf: "",
@@ -31,22 +31,34 @@ export default function App() {
     },
   });
 
-  const handleChange = <K extends keyof Contract>(key: K, data: Contract[K]) => {
+  const handleChange = <K extends keyof Contract>(
+    key: K,
+    data: Contract[K],
+  ) => {
     const newState = {
-        ...contract,
-        [key]: {
+      ...contract,
+      [key]: {
         ...contract[key],
-          ...data,
-        },
-      };
-      setContract(newState);    
-    }
+        ...data,
+      },
+    };
+    setContract(newState);
+  };
 
-    console.log(contract);
-
-    return (
-      <div>
-        <ContractForm contract={contract} onChange={handleChange} />
+  return (
+    <div className="app-shell">
+      <div className="layout-two-columns">
+        <div className="left-panel panel">
+          <ContractForm contract={contract} onChange={handleChange} />
+        </div>
+        <div className="right-panel panel">
+          <h2>Dados do contrato:</h2>
+          <p>
+            Use este espaço para mostrar resumo, status ou informações
+            adicionais.
+          </p>
+        </div>
       </div>
-    );
-  }
+    </div>
+  );
+}
