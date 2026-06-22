@@ -1,9 +1,9 @@
-import type { ContractData } from "../../types/contract";
-
-import Input from "../../components/ui/Input";
+import type { ContractData, ContractErrors } from "@/types/contract";
+import { FormField } from "@/components/ui/FormField";
 
 interface PartFieldsProps {
   data: ContractData;
+  errors: ContractErrors["contractor"];
   title: string;
   updateData: (
     key: keyof ContractData,
@@ -13,6 +13,7 @@ interface PartFieldsProps {
 
 export default function PartFields({
   data,
+  errors,
   title,
   updateData,
 }: PartFieldsProps) {
@@ -20,31 +21,39 @@ export default function PartFields({
     <div className="form-section">
       <h2 className="form-section__title">{title}</h2>
       <div className="form-section__grid">
-        <div className="input-group span-two">
-          <Input
+        <div className="col-span-2">
+          <FormField
             label="Nome completo"
             type="text"
+            placeholder="Ex: João da Silva"
             value={data.name}
+            error={errors.name}
             onChange={(e) => updateData("name", e.target.value)}
           />
         </div>
-        <Input
+        <FormField
           label="CPF / CNPJ"
           type="text"
+          placeholder="000.000.000-00"
           value={data.cpf}
+          error={errors.cpf}
           onChange={(e) => updateData("cpf", e.target.value)}
         />
-        <Input
+        <FormField
           label="E-mail"
           type="email"
+          placeholder="email@exemplo.com"
           value={data.email}
+          error={errors.email}
           onChange={(e) => updateData("email", e.target.value)}
         />
-        <div className="input-group span-two">
-          <Input
+        <div className="col-span-2">
+          <FormField
             label="Endereço"
             type="text"
+            placeholder="Rua, número, bairro, cidade - UF"
             value={data.address}
+            error={errors.address}
             onChange={(e) => updateData("address", e.target.value)}
           />
         </div>

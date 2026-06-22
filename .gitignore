@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Nested project remnant (locked by VS Code)
+contrato-facil/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
