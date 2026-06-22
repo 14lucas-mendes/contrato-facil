@@ -1,5 +1,5 @@
-import type { Contract, ContractErrors } from "../../types/contract";
-import type { TemplateSection } from "../../types/template";
+import type { Contract, ContractErrors } from "../types/contract";
+import type { TemplateSection } from "../types/template";
 
 import PartFields from "./PartFields";
 import PaymentFields from "./PaymentFields";

@@ -1,4 +1,4 @@
-import type { Draft } from "../../types/draft";
+import type { Draft } from "../types/draft";
 import DraftItem from "./DraftItem";
 
 interface DraftListProps {

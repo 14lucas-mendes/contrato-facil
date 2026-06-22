@@ -1,4 +1,4 @@
-import { templates } from "../../templates";
+import { templates } from "../templates";
 
 interface TemplateSelectorProps {
   value: string;
