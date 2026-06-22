@@ -1,5 +1,5 @@
 import type { Contract, ContractErrors } from "@/types/contract";
-import { FormField } from "@/components/ui/FormField";
+import { FormField } from "@/ui/FormField";
 
 interface ServiceFieldsProps {
   data: Contract["service"];

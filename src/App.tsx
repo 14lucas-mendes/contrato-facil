@@ -3,12 +3,12 @@ import { FileText, Save } from "lucide-react";
 import { useContractForm } from "@/hooks/useContractForm";
 import { useDrafts } from "@/hooks/useDrafts";
 import { getTemplateById } from "@/templates";
-import ContractForm from "@/components/form/ContractForm";
-import TemplateSelector from "@/components/form/TemplateSelector";
-import ContractPreview from "@/components/preview/ContractPreview";
-import PrintButton from "@/components/preview/PrintButton";
-import DraftList from "@/components/drafts/DraftList";
-import { Button } from "@/components/ui/Button";
+import ContractForm from "@/form/ContractForm";
+import TemplateSelector from "@/form/TemplateSelector";
+import ContractPreview from "@/preview/ContractPreview";
+import PrintButton from "@/preview/PrintButton";
+import DraftList from "@/drafts/DraftList";
+import { Button } from "@/ui/Button";
 
 export default function App() {
   const { contract, errors, handleChange, validate, resetForm } =

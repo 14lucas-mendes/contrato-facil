@@ -1,5 +1,5 @@
 import { Printer } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/ui/Button";
 
 export default function PrintButton() {
   const handlePrint = () => {

@@ -1,5 +1,5 @@
 import type { Draft } from "@/types/draft";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/ui/Button";
 
 interface DraftItemProps {
   draft: Draft;
